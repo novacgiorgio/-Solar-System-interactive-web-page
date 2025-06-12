@@ -1,0 +1,333 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: linear-gradient(to bottom, #000, #020024);
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.solar-system{
+    position: absolute;
+    left: 51%
+}
+
+/* Soarele */
+#sun {
+    background: linear-gradient(to bottom, #FDB813, #FF4500);
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    box-shadow: 0 0 100px #FDB813;
+    position: relative;
+    z-index: 10;
+    border: none;
+}
+
+/* Orbitale */
+.orbit-visual {
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid hsla(0, 0%, 44%, 0.116);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+/* Mercur */
+#orbitMercury {
+    width: 250px;
+    height: 250px;
+}
+#mercury {
+    width: 40px;
+    border: none;
+    height: 40px;
+    background: #a3a3a3;
+    box-shadow: 0 0 10px #b0b0b0;
+}
+
+/* Venus */
+#orbitVenus {
+    width: 350px;
+    height: 350px;
+}
+#Venus {
+    width: 55px;
+    height: 55px;
+    border: none;
+    background: #e3c16f;
+    box-shadow: 0 0 12px #e3c16f;
+}
+
+/* Earth */
+#orbitEarth {
+    width: 470px;
+    height: 470px;
+}
+#Earth {
+    width: 65px;
+    height: 65px;
+    background: #4D9DE0;
+    border: none;
+    box-shadow: 0 0 12px #4D9DE0;
+}
+
+#Earth::before{
+    content: '';
+    display: block;
+    border-radius: 50%;
+    margin: 50px;
+    box-shadow: 0 0 10px #fff;
+    width: 30px;
+    height: 30px;
+    background: #fff;
+
+}
+
+/* Mars */
+#orbitMars {
+    width: 580px;
+    height: 580px;
+}
+#Mars {
+    width: 60px;
+    height: 60px;
+    background: #c1440e;
+    border: none;
+    box-shadow: 0 0 12px #c1440e;
+}
+
+/* Jupiter */
+#orbitJupiter {
+    width: 740px;
+    height: 740px;
+}
+#Jupiter {
+    width: 120px;
+    height: 120px;
+    border: none;
+    background: #e0a96d;
+    box-shadow: 0 0 15px #e0a96d;
+}
+
+/* Saturn */
+#orbitSaturn {
+    width: 880px;
+    height: 880px;
+}
+#Saturn {
+    width: 90px;
+    height: 90px;
+    border: none;
+    background: #f5d88f;
+    box-shadow: 0 0 15px #f5d88f;
+    position: relative;
+    z-index: 12;
+}
+#Saturn::before {
+    content: '';
+    display: block;
+    width: 140px;
+    height: 28px;
+    z-index: 12;
+    position: absolute;
+    left: -25px;
+    top: 30px;
+    border-radius: 50% / 30%;
+    background: white;
+}
+
+/* Uranus */
+#orbitUranus {
+    width: 1050px;
+    height: 1050px;
+}
+#Uranus {
+    width: 85px;
+    height: 85px;
+    border: none;
+    background: #88e1f2;
+    box-shadow: 0 0 15px #88e1f2;
+}
+
+/* Neptune */
+#orbitNeptune {
+    width: 1180px;
+    height: 1180px;
+}
+#Neptune {
+    width: 75px;
+    border: none;
+    height: 75px;
+    background: #4361ee;
+    box-shadow: 0 0 15px #4361ee;
+}
+
+/* Toate orbitalele */
+#orbitMercury, #orbitVenus, #orbitEarth, #orbitMars, #orbitJupiter, #orbitSaturn, #orbitUranus, #orbitNeptune {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 2px solid hsla(0, 0%, 27%, 0.301);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Toate planetele poziționate pe marginea orbitei */
+#mercury, #Venus, #Earth, #Mars, #Jupiter, #Saturn, #Uranus, #Neptune {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Animatii rotatie (exemplu cu viteze diferite) */
+
+.mercury-rotator {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.venus-rotator {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.earth-rotator {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.mars-rotator {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.jupiter-rotator {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.saturn-rotator {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.uranus-rotator {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.neptune-rotator {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.mercury-rotator { animation: rotateMercury 9s linear infinite; }
+.venus-rotator   { animation: rotateVenus 10s linear infinite; }
+.earth-rotator   { animation: rotateEarth 9s linear infinite; }
+.mars-rotator    { animation: rotateMars 12s linear infinite; }
+.jupiter-rotator { animation: rotateJupiter 15s linear infinite; }
+.saturn-rotator  { animation: rotateSaturn 17s linear infinite; }
+.uranus-rotator  { animation: rotateUranus 19s linear infinite; }
+.neptune-rotator { animation: rotateNeptune 20s linear infinite; }
+
+.mercury-rotator {
+  animation-delay: 0s;
+}
+.venus-rotator {
+  animation-delay: 1.5s;
+}
+.earth-rotator {
+  animation-delay: 3s;
+}
+.mars-rotator {
+  animation-delay: 4.5s;
+}
+.jupiter-rotator {
+  animation-delay: 6s;
+}
+.saturn-rotator {
+  animation-delay: 0.5s;
+}
+.uranus-rotator {
+  animation-delay: 2s;
+}
+.neptune-rotator {
+  animation-delay: 3.5s;
+}
+
+
+
+@keyframes rotateMercury { from {transform: rotate(0deg);} to {transform: rotate(360deg);} }
+@keyframes rotateVenus   { from {transform: rotate(0deg);} to {transform: rotate(360deg);} }
+@keyframes rotateEarth   { from {transform: rotate(0deg);} to {transform: rotate(360deg);} }
+@keyframes rotateMars    { from {transform: rotate(0deg);} to {transform: rotate(360deg);} }
+@keyframes rotateJupiter { from {transform: rotate(0deg);} to {transform: rotate(360deg);} }
+@keyframes rotateSaturn  { from {transform: rotate(0deg);} to {transform: rotate(360deg);} }
+@keyframes rotateUranus  { from {transform: rotate(0deg);} to {transform: rotate(360deg);} }
+@keyframes rotateNeptune { from {transform: rotate(0deg);} to {transform: rotate(360deg);} }
+
+.info{
+    position: absolute;
+    left: 0;
+    top:0;
+    height: 90%;
+    width: 370px;
+    background: transparent;
+    border: 2px solid #ffffff63;
+    border-radius: 30px;
+    margin: 50px 15px ;
+    color: white;
+    padding: 20px;
+}
+
+.info h2{
+    font-size: 2.5rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.info p{
+    font-size: 1.05em;
+    font-weight: 420;
+    display: block;
+}
+.BTNS{
+    text-align: center;
+    margin: 30px;
+}
+
+.BTNS button{
+    width: 100px;
+    height: 30px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 10px;
+    background: rgb(231, 61, 61);
+    color: rgb(0, 0, 0);
+    font-size: 1.3rem;
+    font-weight: 800;
+    transition: all 0.3 ease-in-out;
+    cursor: pointer;
+
+}
+.BTNS button:hover{
+    transform: scale(1.1);
+}
